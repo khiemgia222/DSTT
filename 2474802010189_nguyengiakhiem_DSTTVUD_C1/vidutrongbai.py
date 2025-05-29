@@ -69,5 +69,54 @@ x = Symbol('x')
 y = Symbol('y')
 bieuthuc = x*x - x*y + y*y
 print(bieuthuc)
+giatri = bieuthuc.subs({x:3, y:2})
+print(giatri)
+giatri = bieuthuc.subs({x:3, y:x})
+print(giatri)
+giatri = bieuthuc.subs({x:y, y:3})
+print(giatri)
+giatri = bieuthuc.subs({y:x}).subs({x:3})
+print(giatri)
+from sympy import Symbol
+x = Symbol('x')
+y = Symbol('y')
+bieuthuc = x*x - x*y + y*y
+print(bieuthuc)
+bieuthuc_moi = bieuthuc.subs({x:1-y}) #  x được thay thế bằng (1-y)
+print(bieuthuc_moi)
+from sympy import simplify
+dongian = simplify(bieuthuc_moi)
+print(dongian)
+from sympy import Symbol
+from sympy import sin, cos
+x = Symbol('x')
+y = Symbol('y')
+bt = sin(x)*cos(y) + cos(x)*sin(y)
+bt_moi = simplify(bt)
+print(bt_moi)
+print()
+print('vd3:')
+import numpy as np 
+vec1 = np.array([1., 3., 5.])
+print(vec1 * 2)
+
+print(vec1 * vec1)
+print(vec1 /2)
+
+print(vec1 + vec1)
+
+vec2 = np.array([2., 4.,6.])
+print(vec1 + vec2)
+
+vec3 = np.array([2., 4., 6.])
+print(vec1 + vec3)
+print(vec1 / vec3)
+
+print(vec1 * vec3)
+
+print(2* vec1 + 5* vec3)
+
+  
+
 
 
